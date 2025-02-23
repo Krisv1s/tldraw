@@ -1,0 +1,17 @@
+ARG image=node:22
+FROM ${image} as image-dev
+
+WORKDIR /tmp/build
+
+COPY package.json ./
+RUN npm install
+# ----------------------------------------------------------------------------------------------------------------------
+FROM image-dev as image-build
+COPY . ./
+COPY --from=image-dev /tmp/build/. ./
+RUN npm run build
+# ----------------------------------------------------------------------------------------------------------------------
+FROM nginx:1.14.2 as image-work
+WORKDIR /usr/share/nginx/html
+RUN rm -rf /usr/share/nginx/html/*
+COPY --from=image-build /tmp/build/src/client/dist /usr/share/nginx/html

@@ -1,0 +1,16 @@
+version: '3.9'
+services:
+  front:
+    image: "tldraw-front:latest"
+    build:
+      context: .
+      dockerfile: Dockerfile.Client
+    ports:
+      - '5757:80'
+  back:
+    image: "tldraw-back:latest"
+    build:
+      context: .
+      dockerfile: Dockerfile.Server
+    ports:
+      - '5858:5858'

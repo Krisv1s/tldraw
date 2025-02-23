@@ -9,7 +9,7 @@ import {
   uniqueId,
 } from "tldraw";
 
-const WORKER_URL = ``;
+const WORKER_URL = `http://localhost:5858`;
 
 function App() {
   // Извлекаем roomId из параметра URL
@@ -21,6 +21,15 @@ function App() {
       <div>
         <h1>Не указан roomID</h1>
         <p>roomId указывается в формате ?roomid=*название комнаты*</p>
+        <button
+          onClick={() => {
+            window.location.replace(
+              window.location.pathname + "?roomid=" + crypto.randomUUID()
+            );
+          }}
+        >
+          Сгенерировать комнату
+        </button>
       </div>
     );
   }
