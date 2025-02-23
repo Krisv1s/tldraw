@@ -9,7 +9,7 @@ import {
   uniqueId,
 } from "tldraw";
 
-const WORKER_URL = `http://localhost:5858`;
+const WORKER_URL = `http://45.8.97.220:5858`;
 
 function App() {
   // Извлекаем roomId из параметра URL
