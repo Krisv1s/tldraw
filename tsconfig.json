@@ -1,0 +1,11 @@
+{
+	"include": ["src", "scripts", "vite.config.mts"],
+	"exclude": ["node_modules", "dist", ".tsbuild*"],
+	"compilerOptions": {
+		"jsx": "react",
+		"noEmit": true,
+		"emitDeclarationOnly": false,
+		"types": ["bun", "node"]
+	},
+	"references": []
+}
