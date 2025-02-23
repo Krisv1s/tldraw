@@ -9,6 +9,8 @@ import {
   uniqueId,
 } from "tldraw";
 
+import { v4 as uuidv4 } from 'uuid';
+
 const WORKER_URL = `http://45.8.97.220:5858`;
 
 function App() {
@@ -24,7 +26,7 @@ function App() {
         <button
           onClick={() => {
             window.location.replace(
-              window.location.pathname + "?roomid=" + crypto.randomUUID()
+              window.location.pathname + "?roomid=" + uuidv4()
             );
           }}
         >

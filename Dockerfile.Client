@@ -1,4 +1,4 @@
-ARG image=dockerhub.timeweb.cloud/node:22
+ARG image=dockerhub.timeweb.cloud/node:22-alpine
 FROM ${image} as image-dev
 
 WORKDIR /tmp/build
