@@ -11,7 +11,7 @@ import {
 
 import { v4 as uuidv4 } from "uuid";
 
-const WORKER_URL = `http://45.8.97.220:5858`;
+const WORKER_URL = `https://tldraw.alguri.ru/api`;
 
 function App() {
   // Извлекаем roomId из параметра URL
