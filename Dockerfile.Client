@@ -15,3 +15,5 @@ FROM dockerhub.timeweb.cloud/nginx:1.14.2 as image-work
 WORKDIR /usr/share/nginx/html
 RUN rm -rf /usr/share/nginx/html/*
 COPY --from=image-build /tmp/build/src/client/dist /usr/share/nginx/html
+
+COPY nginx.conf /etc/nginx/conf.d/default.conf

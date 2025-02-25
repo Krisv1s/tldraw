@@ -9,7 +9,7 @@ import {
   uniqueId,
 } from "tldraw";
 
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 
 const WORKER_URL = `http://45.8.97.220:5858`;
 
@@ -42,6 +42,8 @@ function App() {
     assets: multiplayerAssets,
   });
 
+  console.log(store);
+
   return (
     <div style={{ position: "fixed", inset: 0 }}>
       <Tldraw
@@ -71,7 +73,7 @@ const multiplayerAssets: TLAssetStore = {
       throw new Error(`Failed to upload asset: ${response.statusText}`);
     }
 
-    return url;
+    return { src: url };
   },
   resolve(asset) {
     return asset.props.src;
